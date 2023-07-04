@@ -11,6 +11,7 @@
     align-items: center; /* Centraliza verticalmente os elementos */
     justify-content: space-between; /* Espaçamento igual entre os elementos */
     margin: 0 20px;
+    border-bottom: 1px solid #08AD9D;
 }
   
 .logo {

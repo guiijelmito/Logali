@@ -4,6 +4,7 @@ import sino from '../imagens/sino.png'
 import logo from '../imagens/logo.png'
 import estrela from '../imagens/estrela.png'
 import foto_perfil from '../imagens/foto_perfil.png'
+import Separation from '../imagens/Separation.svg'
 
 import '../Styles/Header.css'
 
@@ -25,7 +26,9 @@ export default function(){
             <img id='notificar' className='icone_op' src={sino} alt="Icone de Sino" />         {/*Notificações*/}
          </picture>
 
-         <button id='btn_perfil' type="button"> <img class="img_perfil" src={foto_perfil} alt="Imagem do Perfil" /> </button>
+         <button id='btn_perfil' type="button"> 
+            <img class="img_perfil" src={foto_perfil} alt="Imagem do Perfil" />
+         </button>
 
         </header>
     )
