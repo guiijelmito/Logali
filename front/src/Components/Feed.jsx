@@ -6,6 +6,7 @@ import foto_mercado from '../imagens/foto_mercado.png'
 
 import '../styles/Feed.css'
 import Header from '../Components/Header'
+import PostInput from '../Components/PostInput'
 
 export default function(){
     return(
@@ -21,7 +22,6 @@ export default function(){
                     <li id='tag_role' > <img className='tags' src={foto_role} alt="Imagem Role" /> <span class='text'>Rolezinho</span> </li> 
                     <li id='tag_mercado' > <img className='tags' src={foto_mercado} alt="Imagem Mercado" /> <span class='text'>Mercado</span> </li> 
                     <li id='tag_lazer' > <img className='tags' src={foto_lazer} alt="Imagem Lazer" /> <span class='text'>Lazer</span> </li> 
-
                 </ul>
             </menu> 
          </div>
