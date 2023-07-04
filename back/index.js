@@ -8,6 +8,8 @@ const jwt = require('jsonwebtoken');
 
 //rotas de autenticacao
 const authRoutes = require('./router/auth');
+
+// rotas das páginas ao usuário
 const homepageRoutes = require('./router/homepage')
 
 app.use(express.json());
