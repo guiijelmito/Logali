@@ -1,13 +1,9 @@
-require('dotenv').config()
 
 const express = require('express');
 const app = express();
 const fs = require('fs');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
-
-const token = process.env.TOKEN;
-
 
 //rotas de autenticacao
 const authRoutes = require('./router/auth');
@@ -26,6 +22,3 @@ app.listen(4000, () => {
     console.log('Servidor na porta 4000');
 });
 
-require('crypto').randomBytes(64).toString('hex');
-
-token
