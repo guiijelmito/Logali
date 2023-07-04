@@ -6,6 +6,9 @@ const fs = require('fs');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 
+const token = process.env.TOKEN;
+
+
 //rotas de autenticacao
 const authRoutes = require('./router/auth');
 
@@ -24,4 +27,5 @@ app.listen(4000, () => {
 });
 
 require('crypto').randomBytes(64).toString('hex');
-TOKEN
+
+token
