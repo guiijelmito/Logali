@@ -1,16 +1,92 @@
 @charset "UTF-8";
 
 .header{
-    width: 1440px;
+    position: fixed;
+    top: 0%;
+    left: 5%;
+    width: 85%;
     height: 100px;
-    flex-shrink: 0;
+    background-color: transparent; /* Cor de fundo do cabeçalho */
+    display: flex; /* Faz os elementos ficarem em linha */
+    align-items: center; /* Centraliza verticalmente os elementos */
+    justify-content: space-between; /* Espaçamento igual entre os elementos */
+    margin: 0 20px;
+}
+  
+.logo {
+    width: 60px;
+    height: 55px;
+    transition: .4s;
 }
 
-.logo{
-    width: 59px;
-    height: 54px;
-    flex-shrink: 0;
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #08ad9c9c);
+    cursor: pointer;
+    transform: scale(1.1);
+}
 
-    border-radius: 59px;
-    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+form{
+    position: relative;
+    right: 13%;
+    background-color: rgba(128, 128, 128, 0.219);
+    width: min-content;
+    height: 40%;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    border: 1px solid #08AD9D;
+    
+}
+
+#barra_busca{
+    width: 300px;
+    font-size: 12pt;
+    border: 0px solid black;
+    outline: none;
+    background-color: transparent;
+    margin: 0 15px;
+}
+
+::placeholder{
+    color: #08AD9D;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.356);
+}
+
+.conteiner_op{
+    position: fixed;
+    left: 40%;
+}
+
+.icone_op{
+    margin: 5px;
+    transition: .4s;
+}
+
+.icone_op:hover{
+    cursor: pointer;
+    filter: drop-shadow(0 0 2em #08ad9c94);
+    transform: scale(1.2);
+}
+
+.img_perfil{
+    width: 53px;
+    height: auto;
+    
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background-color: #1a1a1a00;
+    cursor: pointer;
+    transition: 0.4s;  
+}
+
+.img_perfil:hover{
+    cursor: pointer;
+    filter: drop-shadow(0 0 2em #08ad9c69);
+    transform: scale(1.1);
+}
+
+button{
+    background-color: transparent;
+    border: 0px solid black;
 }
