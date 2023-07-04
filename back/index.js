@@ -21,4 +21,3 @@ app.use('/homePage', homepageRoutes);
 app.listen(4000, () => {
     console.log('Servidor na porta 4000');
 });
-
