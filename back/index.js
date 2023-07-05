@@ -1,9 +1,9 @@
 
 const express = require('express');
 const app = express();
-const fs = require('fs');
+//const fs = require('fs');
 const cors = require('cors');
-const jwt = require('jsonwebtoken');
+//const jwt = require('jsonwebtoken');
 
 //rotas de autenticacao
 const authRoutes = require('./router/auth');
