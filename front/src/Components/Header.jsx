@@ -7,6 +7,7 @@ import foto_perfil from '../imagens/foto_perfil.png'
 import Separation from '../imagens/Separation.svg'
 
 import '../Styles/Header.css'
+import PostInput from './PostInput'
 
 
 export default function(){
@@ -29,7 +30,8 @@ export default function(){
          <button id='btn_perfil' type="button"> 
             <img class="img_perfil" src={foto_perfil} alt="Imagem do Perfil" />
          </button>
-
+         
         </header>
+        
     )
 }

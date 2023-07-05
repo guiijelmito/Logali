@@ -1,4 +1,3 @@
-require('dotenv').config()
 
 const express = require('express');
 const app = express();
@@ -22,6 +21,3 @@ app.use('/homePage', homepageRoutes);
 app.listen(4000, () => {
     console.log('Servidor na porta 4000');
 });
-
-require('crypto').randomBytes(64).toString('hex');
-TOKEN

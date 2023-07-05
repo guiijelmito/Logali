@@ -6,6 +6,7 @@ import foto_mercado from '../imagens/foto_mercado.png'
 
 import '../styles/Feed.css'
 import Header from '../Components/Header'
+import PostInput from '../Components/PostInput'
 
 export default function(){
     return(
