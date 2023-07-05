@@ -15,7 +15,7 @@ export default function(){
         <header className='header'>
          <img className='logo' src={logo} alt="Logo do Logali" />
 
-         <form action="search.csv" method="get" autocomplete="off"> {/* Formulário para a barra de pesquisa */}
+         <form action="search.csv" method="get" autocomplete="off" className='search'> {/* Formulário para a barra de pesquisa */}
           <img src={lupa} alt="Icone de lupa" />
           <input type="search" name="barra_busca" id="barra_busca" placeholder='Pesquisa ai curioso'/>
 
