@@ -16,6 +16,7 @@
     display: grid;
     grid-template-columns: 50% auto; 
     align-items: center; 
+    transition: 0.4s;
 }
 
 .lista_tags{

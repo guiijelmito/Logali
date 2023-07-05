@@ -16,11 +16,25 @@ export default function(){
             <h3>Lugares</h3>
             <menu>
                 <ul className='lista_tags' >
-                    <li id='tag_rep' > <img className='tags' src={foto_rep} alt="Imagem Reps" /> <span class='text'>Reps</span></li> 
-                    <li id='tag_bar' > <img className='tags' src={foto_bar} alt="Imagem Barzinho" /> <span class='text'>Barzinho</span> </li> 
-                    <li id='tag_role' > <img className='tags' src={foto_role} alt="Imagem Role" /> <span class='text'>Rolezinho</span> </li> 
-                    <li id='tag_mercado' > <img className='tags' src={foto_mercado} alt="Imagem Mercado" /> <span class='text'>Mercado</span> </li> 
-                    <li id='tag_lazer' > <img className='tags' src={foto_lazer} alt="Imagem Lazer" /> <span class='text'>Lazer</span> </li> 
+                    <li id='tag_rep' > 
+                     <img className='tags' src={foto_rep} alt="Imagem Reps" /> <span class='text'>Reps</span>
+                    </li> 
+
+                    <li id='tag_bar' > 
+                     <img className='tags' src={foto_bar} alt="Imagem Barzinho" /> <span class='text'>Barzinho</span>
+                    </li> 
+
+                    <li id='tag_role' > 
+                     <img className='tags' src={foto_role} alt="Imagem Role" /> <span class='text'>Rolezinho</span> 
+                    </li> 
+
+                    <li id='tag_mercado' >
+                     <img className='tags' src={foto_mercado} alt="Imagem Mercado" /> <span class='text'>Mercado</span>
+                    </li> 
+                    
+                    <li id='tag_lazer' > 
+                     <img className='tags' src={foto_lazer} alt="Imagem Lazer" /> <span class='text'>Lazer</span>
+                    </li> 
 
                 </ul>
             </menu> 
