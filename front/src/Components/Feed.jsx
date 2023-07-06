@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import seta from '../imagens/seta.png'
 import hashtag from '../imagens/hashtag.png'
 import foto_rep from '../imagens/foto_rep.png'
@@ -15,12 +16,30 @@ import foto_mercado from '../imagens/foto_mercado.png'
 
 import '../styles/Feed.css'
 import Header from '../Components/Header'
-import PostInput from '../Components/PostInput'
+import PostForm from './PostForm'
 
 {/* Pendência: 
             Fazer o textarea aumentar de tamanho conforme o usuário escreve nele;
             Fazer o header sobrepor os outros elementos ;
             Fazer o Combobox das tags quando o usário clica no botão Tags*/}
+
+// Componente que mostra o número de curtidas e permite que o usuário curta a postagem
+function NumLikes(){
+    const [likes, setLikes] = useState(0);
+
+    const increment = () => {
+        setLikes(likes + 1);
+    }
+
+    return(
+        <>
+            <button onClick={increment} id='coracao' className="btn_interage"> 
+                <img src={icone_coracao} alt="Imagem de coração"/>
+            </button>
+            <p className='icones_post'> {likes} </p>  {/* Número de curtidas */}
+        </>
+    )
+}
 
 export default function(){
     return(  
@@ -55,43 +74,7 @@ export default function(){
             </menu> 
          </div>
 
-         <div className="container_share"> {/* Caixa onde o usuário faz suas postagens */}
-            <img className="img_perfil" src={foto_perfil} alt="Imagem do Perfil"/>
-
-            <form className='share' action="#" method="get"> 
-                <textarea name="input_post" id="area_texto" placeholder="Opine aqui..."></textarea>
-
-            </form>
-
-            <hr />
-
-            <menu>
-                <ul className='lista_icones_share'>
-                    <li id='post_imagem' > 
-                        <button id="img_foto"> 
-                            <img className='icones_share' src={icone_imagem} alt="Icone de Foto"/> <span className="text_share">Imagem</span>
-                        </button>
-                    </li>
-
-                    <li id='post_video' > 
-                        <button id="img_video" > 
-                            <img className='icones_share' src={icone_video} alt="Icone de Camera"/> <span className="text_share">Vídeo</span>
-                        </button>
-                    </li>
-
-                    <li id='mensionar' > 
-                        <button id="img_mencao" > 
-                            <img className='icones_share' src={icone_arroba} alt="Icone de Arroba"/> <span className="text_share">Mensão</span>
-                        </button>
-                    </li>
-                </ul>
-
-            </menu>
-
-            <button className='btn_share' id="mostra_tags"> Tag <img id='img_seta' src={seta} alt="Icone de uma seta" /> </button>
-            <button className='btn_share' id="publica"> Publicar </button>
-
-         </div>
+        <PostForm />
 
          <div className="container_share"> {/* Caixa onde o usuário faz suas postagens */}
         <img className="img_perfil" src={foto_perfil} alt="Imagem do Perfil"/>
@@ -142,8 +125,8 @@ export default function(){
             <img id="post_foto" src={bar_chico} alt="Imagem postada pelo usuário"/>
 
             <div className='interagir'>
-                <button id='coracao' className="btn_interage"> <img src={icone_coracao} alt="Imagem de coração"/> </button> {/* Botão de like */}
-                <p className='icones_post'> 42 </p>  {/* Número de curtidas */}
+
+                <NumLikes />
 
                 <button id='comentario' className="btn_interage"> <img src={icone_conversa} alt="Imagem de coração"/> </button> {/* Botão para comentar */}
                 <p className='icones_post'> 13 </p>  {/* Número de comentários */}

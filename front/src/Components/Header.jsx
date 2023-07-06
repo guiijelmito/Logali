@@ -7,10 +7,9 @@ import foto_perfil from '../imagens/foto_perfil.png'
 import Separation from '../imagens/Separation.svg'
 
 import '../Styles/Header.css'
-import PostInput from './PostInput'
-
 
 export default function(){
+
     return(
         <div className='header'>
          <img className='logo' src={logo} alt="Logo do Logali" />
