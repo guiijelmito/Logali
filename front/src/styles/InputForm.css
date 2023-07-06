@@ -1,0 +1,159 @@
+
+.input-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(232, 216, 216, 0.5); /* Fundo semitransparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Certifique-se de que o z-index seja maior do que outros elementos para sobrepor */
+}
+
+.input-form-container {
+  position: relative; /* Adicionado para posicionar o botão de fechar */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alterado para centralizar os itens horizontalmente */
+  justify-content: center;
+  width: 550px;
+  height: 480px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 30px;
+  border: 3.25px solid #AE119E;
+  background: #141313;
+}
+
+.titulo {
+  color: #08AD9D;
+  font-size: 30px;
+  line-height: 0.2;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: -70px;
+}
+
+.titulo-input {
+  font-weight: bold;
+  margin-bottom: -5px;
+  color: #08AD9D;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+textarea {
+  border-color: #AE119E;
+  border-radius: 8px;
+  border: 1px solid #AE119E;
+  margin-top: 10px;
+  width: 500px; /* ajustado para ocupar todo o espaço disponível */
+  height: 125px; /* ajuste a altura conforme necessário */
+  resize: vertical; /* adicionado para permitir redimensionamento vertical */
+}
+
+.hr {
+  width: 100%;
+  color: #AE119E;
+  margin-bottom: 40px;
+}
+
+input {
+  border-color: #AE119E;
+  border-radius: 8px;
+  border: 1px solid #AE119E;
+  margin-top: 10px;
+  width: 150px; /* ajustado para ocupar todo o espaço disponível */
+  height: 30px; /* ajuste a altura conforme necessário */
+  resize: vertical; /* adicionado para permitir redimensionamento vertical */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-color: #d60a22;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-button::before,
+.close-button::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  background-color: #fff;
+}
+
+.close-button::before {
+  transform: rotate(45deg);
+}
+
+.close-button::after {
+  transform: rotate(-45deg);
+}
+
+.close-button:hover {
+  background-color: #AE119E;
+}
+
+.form-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 30px;
+  border: 3.25px solid #AE119E;
+  background: #141313;
+  width: 550px;
+  height: 330px;
+}
+
+.icones {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.send-button {
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+  background-color: #AE119E;
+  border-radius: 8px;
+  border: none; /* Removido a borda */
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Adicionado transição suave de cor */
+}
+
+.send-button:hover {
+  background-color: #8E0D82; /* Alterada cor de fundo no hover */
+}
+
+.send-button:focus {
+  outline: none; /* Removido o contorno de foco */
+}
+
+/* Adicionado para centralizar o botão */
+.send-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
