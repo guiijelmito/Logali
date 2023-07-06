@@ -12,7 +12,7 @@ import PostInput from './PostInput'
 
 export default function(){
     return(
-        <header className='header'>
+        <div className='header'>
          <img className='logo' src={logo} alt="Logo do Logali" />
 
          <form action="search.csv" method="get" autocomplete="off" className='search'> {/* Formulário para a barra de pesquisa */}
@@ -31,7 +31,7 @@ export default function(){
             <img class="img_perfil" src={foto_perfil} alt="Imagem do Perfil" />
          </button>
          
-        </header>
+        </div>
         
     )
 }
