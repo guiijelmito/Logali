@@ -49,11 +49,11 @@ export default function InputForm({ onClose }) {
       <div className="input-form-container">
         <h1 className='titulo'>Criar Publicação</h1>
         <hr className='hr'></hr>
-        <button className="close-button"onClick={onClose}>X</button>
+        <button className="close-button"onClick={handleClose}>X</button>
 
         <form className="form-post"onSubmit={handleSubmit}>
           <label className='titulo-input'htmlFor="name">Nome do Lugar</label>
-          <input type="text" name="Nome do lugar" id="name" value={name} onChange={handleNameChange} />7
+          <input type="text" name="Nome do lugar" id="name" value={name} onChange={handleNameChange} />
 
           <textarea name="Descrição" id="description" placeholder=' Conte para os outros sua experiência...' cols="30" rows="10" value={description} onChange={handleDescriptionChange}>
           </textarea>
@@ -63,7 +63,7 @@ export default function InputForm({ onClose }) {
             <button className='icones-button'><img className='icones-img' src={icone_arroba} alt="arroba" /></button>
           </div>
 
-          <button className='send-button' type="submit">Enviar</button>
+          <button className='send-button' type="submit">Publicar</button>
         </form>
         
       </div>

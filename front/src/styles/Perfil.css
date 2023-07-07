@@ -1,9 +1,12 @@
 @charset "UTf-8";
 
+
+/* ******************************************* */
+
 .container_tags{
     position: fixed;
     left: 10%;
-    top: 20%;
+    top: 65%;
 
     width: 260px;
     height: 450px;
@@ -56,7 +59,7 @@ h3{
 .container_share{
     position: absolute;
     left: 35%;
-    top: 20%;
+    top: 65%;
     width: 750px;
     border-radius: 30px;
     border: 1px solid #AE119E;
@@ -153,7 +156,7 @@ hr{
 .container_post{
     position: absolute;
     left: 35%;
-    top: 45%;
+    top: 90%;
 
     width: 740px;
     height: auto;

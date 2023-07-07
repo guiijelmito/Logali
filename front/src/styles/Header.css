@@ -20,7 +20,7 @@
     transition: .4s;
 }
 
-  .logo:hover {
+.logo:hover {
     filter: drop-shadow(0 0 2em #08ad9c9c);
     cursor: pointer;
     transform: scale(1.1);
@@ -67,7 +67,7 @@ form.search{
 .icone_op:hover{
     cursor: pointer;
     filter: drop-shadow(0 0 2em #08ad9c94);
-    transform: scale(1.2);
+    transform: translate(-2px, 2px);
 }
 
 .img_perfil{
