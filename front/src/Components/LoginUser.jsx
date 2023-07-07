@@ -44,19 +44,19 @@ export default function LoginUser(){
     */
     return (
         <>
-        <div className='container'>
+        <div className="body">
+        <div className='container1'>
             <p className="logo">Logáli</p>
             <form  className='Login' onSubmit={handleSubmit(submit)} noValidate>
 
-                <label htmlFor="email" placeholder="email">Email</label>
-                <input type="text" id="email" {...register('email')} />
+                <label className='nomelogar' htmlFor="email" placeholder="email">Email</label>
+                <input className='logar' type="text" id="email" {...register('email')} />
                 <p className='erro'>{errors.email?.message}</p>
-
-                <label htmlFor="password">Senha</label>
-                <input type="password" id="password" {...register('password')} />
+                <label className='senhalogar' htmlFor="password">Senha</label>
+                <input className='logar' type="password" id="password" {...register('password')} />
                 <p className='erro'>{errors.password?.message}</p>
 
-                <button>Entrar</button>
+                <button className='Entrar'>Entrar</button>
             </form>
             <p className="logo">Logáli</p>
             </div>
@@ -65,9 +65,8 @@ export default function LoginUser(){
             <div className="realizar-cadastro">
                 Não possui conta? 
                 <Link to="/criar-user">Cadastro</Link>
-            </div>
-            
-            
+            </div>    
+        </div> 
         </>
     )
 
