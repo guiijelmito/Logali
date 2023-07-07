@@ -1,7 +1,12 @@
-.button-post {
-    border: none;
-    background-color: #AE119E;
-    color: #fff;
-    border-radius: 8px;
+.button-post > img{
+    position: absolute;
+    left: 590px;
+    top: 16px;
+    transition: .4s;
+    transition-timing-function: ease;
+}
 
+.button-post img:hover{
+    cursor: pointer;
+    transform: scale(1.2)
 }

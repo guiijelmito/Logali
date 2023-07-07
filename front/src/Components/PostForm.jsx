@@ -5,7 +5,6 @@ import icone_video from '../imagens/video.png';
 import icone_arroba from '../imagens/arroba.png';
 import seta from '../imagens/seta.png';
 import '../styles/Feed.css';
-import InputPost from './InputPost';
 
 
 export default function(){
@@ -13,8 +12,6 @@ export default function(){
         <>
         <div className="container_share"> {/* Caixa onde o usuário faz suas postagens */}
             <img className="img_perfil" src={foto_perfil} alt="Imagem do Perfil"/>
-
-            <InputPost />
 
             <hr />
 
@@ -41,7 +38,9 @@ export default function(){
 
             </menu>
 
-            <button className='btn_share' id="mostra_tags"> Tag <img id='img_seta' src={seta} alt="Icone de uma seta" /> </button>
+            <button className='btn_share' id="mostra_tags"> 
+                Tag <img id='img_seta' src={seta} alt="Icone de uma seta" /> 
+            </button>
             <button className='btn_share' id="publica"> Publicar </button>
 
          </div>

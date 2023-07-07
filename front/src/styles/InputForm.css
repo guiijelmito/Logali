@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(232, 216, 216, 0.5); /* Fundo semitransparente */
+  background-color: rgba(232, 216, 216, 0); /* Fundo semitransparente */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,7 +79,6 @@
   width: 25px;
   height: 25px;
   cursor: pointer;
-  background-color: #d60a22;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -120,7 +119,7 @@
   height: 330px;
 }
 
-.icones {
+.icones{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -129,21 +128,31 @@
   margin-bottom: 10px;
 }
 
+.icones-button{
+  transition: .4s ease;
+}
+
+.icones-button:hover{
+  filter: drop-shadow(0 0 2em #ae119e);
+  cursor: pointer;
+  transform: translate(-2px, 2px);
+}
+
 .send-button {
   margin-top: 10px;
   width: 100px;
   height: 30px;
-  background-color: #AE119E;
-  border-radius: 8px;
-  border: none; /* Removido a borda */
+  border-radius: 5px;
+  background: linear-gradient(204deg, #08AD9D 47.83%, #AE119E 48.14%);
   color: #fff;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Adicionado transição suave de cor */
+  transition: .3s ease; /* Adicionado transição suave de cor */
 }
 
 .send-button:hover {
-  background-color: #8E0D82; /* Alterada cor de fundo no hover */
+  filter: drop-shadow(0 0 2em #08ad9c46);
+  cursor: pointer;  
 }
 
 .send-button:focus {

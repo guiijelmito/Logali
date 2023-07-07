@@ -5,24 +5,26 @@ import hashtag from '../imagens/hashtag.png'
 import foto_rep from '../imagens/foto_rep.png'
 import foto_bar from '../imagens/foto_bar.png'
 import icone_video from '../imagens/video.png'
-import bar_chico from '../imagens/bardochico.png'
 import icone_arroba from '../imagens/arroba.png'
 import foto_role from '../imagens/foto_role.png'
 import icone_imagem from '../imagens/imagem.png'
+import bar_chico from '../imagens/bardochico.png'
 import icone_coracao from '../imagens/coracao.png'
 import foto_lazer from '../imagens/foto_lazer.png'
 import icone_conversa from '../imagens/conversa.png'
 import foto_perfil from '../imagens/foto_perfil.png'
 import foto_mercado from '../imagens/foto_mercado.png'
+import banner from '../imagens/banner.png'
 
-import '../styles/Feed.css'
+import '../styles/Perfil.css'
+
 import PostForm from './PostForm'
 import InputPost from './InputPost';
 import Header from '../Components/Header'
 
-{/* Pendência: 
-            Fazer o header sobrepor os outros elementos ;
-            Fazer o Combobox das tags quando o usário clica no botão Tags*/}
+
+{/* Página do Usuário!!! */}
+
 
 // Componente que mostra o número de curtidas e permite que o usuário curta a postagem
 function NumLikes(){
@@ -46,7 +48,10 @@ export default function(){
     return(  
         <>
          <Header />
-         
+        <div className='usuario'>
+            <img className='banner' src={banner} alt="Banner da Página do Usuário" /> {/* Banner */}
+            <img className="img_perfil" src={foto_perfil} alt="Imagem do Perfil"/> <p className='nome'>Bixo Burro</p>{/* Foto e Nome do Usuário */}
+        </div>
          <div className='container_tags'>
             <h3>Lugares</h3>
             <menu>
@@ -125,7 +130,7 @@ export default function(){
             <p className='text_loc'> Bixo <strong>estava em</strong> Barzinho do chico </p> {/* Texto ao lado da foto de perfil do usuário que indica a localização */} 
             <p className="horas"> 2 horas atrás </p>
 
-            <p className="texto_usuario"> Nunca vi uma lugar tão reconfortante e bom para beber e bater um papo com os cria. </p>
+            <p className="texto_usuario"> Nunca vi uma lugar tão reconfortante e bom para beber e bater um papo com os cria.</p>
 
             <img id="post_foto" src={bar_chico} alt="Imagem postada pelo usuário"/>
 
