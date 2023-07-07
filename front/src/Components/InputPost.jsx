@@ -7,6 +7,7 @@ export default function PostEntry() {
   const [showInputForm, setShowInputForm] = useState(false);
 
   const handleImageClick = () => {
+    console.log("clicou");
     setShowInputForm(true);
   };
 

@@ -2,8 +2,7 @@
     position: absolute;
     left: 590px;
     top: 16px;
-    transition: .4s;
-    transition-timing-function: ease;
+    
 }
 
 .button-post img:hover{
