@@ -46,7 +46,7 @@
   line-height: normal;
 }
 
-textarea {
+.campo_input {
   border-color: #AE119E;
   border-radius: 8px;
   border: 1px solid #AE119E;
@@ -62,7 +62,7 @@ textarea {
   margin-bottom: 40px;
 }
 
-input {
+.input-titulo{
   border-color: #AE119E;
   border-radius: 8px;
   border: 1px solid #AE119E;

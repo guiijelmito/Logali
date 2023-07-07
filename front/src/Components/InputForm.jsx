@@ -53,9 +53,9 @@ export default function InputForm({ onClose }) {
 
         <form className="form-post"onSubmit={handleSubmit}>
           <label className='titulo-input'htmlFor="name">Nome do Lugar</label>
-          <input type="text" name="Nome do lugar" id="name" value={name} onChange={handleNameChange} />7
+          <input className='input-titulo'type="text" name="Nome do lugar" id="name" value={name} onChange={handleNameChange} />
 
-          <textarea name="Descrição" id="description" placeholder=' Conte para os outros sua experiência...' cols="30" rows="10" value={description} onChange={handleDescriptionChange}>
+          <textarea className='campo_input'name="Descrição" id="description" placeholder=' Conte para os outros sua experiência...' cols="30" rows="10" value={description} onChange={handleDescriptionChange}>
           </textarea>
           <div className='icones'>
             <button className='icones-button'><img className='icones-img' src={icone_imagem} alt="imagem" /></button>
