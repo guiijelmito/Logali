@@ -1,10 +1,8 @@
-{
-  "users": [
-    {
-      "id": 1,
-      "username": "username",
-      "email": "email@example.com",
-      "password": "password"
-    }
-  ]
-}
+[
+  {
+    "id": 3,
+    "username": "teste1",
+    "email": "teste1@teste.com",
+    "password": "$2b$10$tQuVOtHhCKra78PHXnnpCeArDvom7oi4sGtoxPBL3Lar5TM.dELne"
+  }
+]

@@ -8,7 +8,7 @@ const path = require('path');
 //autenticacao e cryp
 const jwt = require('jsonwebtoken');
 
-router.get('/', autenticarToken, (req, res) => {
+router.get('/homePage', autenticarToken, (req, res) => {
 
     const jsonPath = path.join(__dirname, '..', 'banco', 'postagens.json');
     const postagens = JSON.parse(fs.readFileSync(jsonPath, { encoding: 'utf8', flag: 'r' }));

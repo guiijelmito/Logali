@@ -38,10 +38,10 @@ export default function LoginUser(){
         
     }
 
-    /*if(msg.includes('Usuário Autenticado')){
-        return <Navigate to='/disciplinas' />
+    if(msg.includes('Usuário Autenticado')){
+        return <Navigate to='/homePage' />
     }
-    */
+
     return (
         <>
         <div className="body">
@@ -52,6 +52,7 @@ export default function LoginUser(){
                 <label className='nomelogar' htmlFor="email" placeholder="email">Email</label>
                 <input className='logar' type="text" id="email" {...register('email')} />
                 <p className='erro'>{errors.email?.message}</p>
+                
                 <label className='senhalogar' htmlFor="password">Senha</label>
                 <input className='logar' type="password" id="password" {...register('password')} />
                 <p className='erro'>{errors.password?.message}</p>
@@ -64,7 +65,7 @@ export default function LoginUser(){
             <p className="server-response">{msg}</p>
             <div className="realizar-cadastro">
                 Não possui conta? 
-                <Link to="/criar-user">Cadastro</Link>
+                <Link to="/CreateUser">Cadastro</Link>
             </div>    
         </div> 
         </>
