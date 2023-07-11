@@ -6,7 +6,7 @@ import '../styles/InputPost.css';
 export default function PostEntry() {
   const [showInputForm, setShowInputForm] = useState(false);
 
-  const handleImageClick = () => {
+  const handleMouseDown = () => {
     console.log("clicou");
     setShowInputForm(true);
   };
@@ -19,7 +19,7 @@ export default function PostEntry() {
     <div>
       <form className='share' action="#" method="get">
         {!showInputForm ? (
-          <button className='button-post' onClick={handleImageClick}>
+          <button className='button-post' onMouseDown={handleMouseDown}>
             <img src={fullscreen} alt="Icone para aumentar a tela" />
           </button>
         ) : (

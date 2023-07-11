@@ -24,22 +24,28 @@ import Header from '../Components/Header'
             Fazer o header sobrepor os outros elementos ;
             Fazer o Combobox das tags quando o usário clica no botão Tags*/}
 
-// Componente que mostra o número de curtidas e permite que o usuário curta a postagem
-function NumLikes(){
+// Componente que mostra o número de curtidas e permite que o usuário curta/descurta a postagem
+function NumLikes() {
     const [likes, setLikes] = useState(0);
+    const [liked, setLiked] = useState(false);
 
     const increment = () => {
-        setLikes(likes + 1);
-    }
+        if (!liked) {
+            setLikes(likes + 1);
+        } else {
+            setLikes(likes - 1);
+        }
+        setLiked(!liked);
+    };
 
-    return(
+    return (
         <>
-            <button onClick={increment} id='coracao' className="btn_interagir"> 
+            <button onClick={increment} id='coracao' className="btn_interagir">
                 <img src={icone_coracao} alt="Imagem de coração"/>
             </button>
             <p className='stats_post'> {likes} </p>  {/* Número de curtidas */}
         </>
-    )
+    );
 }
 
 export default function(){
@@ -82,7 +88,7 @@ export default function(){
 
             <form className='share' action="#" method="get"> 
                 <textarea name="input_post" id="area_texto" placeholder="Opine aqui..."></textarea> 
-                <InputPost className='btn_fullscreen'/> {/* Botão que leva o usuário para o pop-up de criação de post */}
+                <InputPost/> {/* Botão que leva o usuário para o pop-up de criação de post */}
 
             </form>
                 
