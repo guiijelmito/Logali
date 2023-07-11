@@ -35,7 +35,7 @@ export default function(){
         
         try {
             const response = await axios.post('http://localhost:3000/auth/create', data);
-            setMsg(response.data);
+            setMsg('Usuário Criado, volte para página de Login');
         } catch (error) {
             setMsg(error.response.data);
         }   
