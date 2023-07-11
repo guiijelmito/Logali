@@ -20,7 +20,7 @@ router.get('/homePage', autenticarToken, (req, res) => {
 
 })
 
-router.post('/newPost', autenticarToken, (req, res) =>{
+router.post('homePage/newPost', autenticarToken, (req, res) =>{
     
     const jsonPath = path.join(__dirname, '..', 'banco', 'postagens.json');
     const postagens = JSON.parse(fs.readFileSync(jsonPath, { encoding: 'utf8', flag: 'r' }));
@@ -28,8 +28,12 @@ router.post('/newPost', autenticarToken, (req, res) =>{
     // Obtém o conteúdo e o autor da postagem a partir do corpo da requisição
     const { username, texto, tags } = req.body;
 
+    const id = postagens.length + 1;
+
+    const likes = 0;
+
     // Cria uma nova instância da classe Postagem
-    const novaPostagem = new Postagem(username, texto, tags);
+    const novaPostagem = new Postagem(username, texto, tags, id, likes);
 
     // Adiciona a nova postagem ao array de postagens
     postagens.push(novaPostagem);
@@ -39,7 +43,7 @@ router.post('/newPost', autenticarToken, (req, res) =>{
 })
 
 // precisa testar se ta funcionando
-router.get('/:username', autenticarToken, (req, res) => {
+router.get('homePage/:username', autenticarToken, (req, res) => {
     // Obtém o nome de usuário a partir do parâmetro de rota
     const { username } = req.params;
 
@@ -74,7 +78,7 @@ router.get('/:username', autenticarToken, (req, res) => {
 });
 
 // rota das tags
-router.get('/:tag', autenticarToken, (req, res) => {
+router.get('homePage/:tag', autenticarToken, (req, res) => {
     // recebe a tag como parametro da rota
     const { tag } = req.params;
 
@@ -90,6 +94,37 @@ router.get('/:tag', autenticarToken, (req, res) => {
     // devolve as postagens já filtradas
     res.json({ posts: taggedPosts });
 
+})
+
+router.post("homePage/like", autenticarToken, (req, res) => {
+    const id = req.body.id;
+
+    const jsonPath = path.join(__dirname, '..', 'banco', 'postagens.json');
+    const postagens = JSON.parse(fs.readFileSync(jsonPath, { encoding: 'utf8', flag: 'r' }));
+
+    const post = postagens.find(post => post.id === id);
+    post.likes += 1;
+
+    fs.writeFileSync('postagens.json', JSON.stringify(data));
+  
+    res.json({ likes: post.likes });
+})
+
+router.post("homePage/comment", autenticarToken, (req, res) => {
+    const id = req.body.id;
+    const username = req.body.username;
+    const commentText = req.body.commentText;
+
+    const jsonPath = path.join(__dirname, '..', 'banco', 'postagens.json');
+    const postagens = JSON.parse(fs.readFileSync(jsonPath, { encoding: 'utf8', flag: 'r' }));
+
+    const post = postagens.find(post => post.id === id);
+
+    post.comments.push({ text: commentText, username });
+
+    fs.writeFileSync('postagens.json', JSON.stringify(data));
+
+    res.json({ comments: post.comments });
 })
 
 function autenticarToken (req,res,next){
