@@ -7,6 +7,15 @@ import seta from '../imagens/seta.png';
 import '../styles/Feed.css';
 import InputPost from './InputPost';
 
+const submit = async (data) => {
+    try {
+        const response = await axios.post('http://localhost:3000/homePage/newPost', data);
+        sessionStorage.setItem('token', response.data);
+        history.push('/homepage');
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 export default function(){
     return(
@@ -48,7 +57,7 @@ export default function(){
             <button className='btn_share' id="mostra_tags"> 
                 Tag <img id='img_seta' src={seta} alt="Icone de uma seta" /> 
             </button>
-            <button className='btn_share' id="publica"> Publicar </button>
+            <button className='btn_share' type='submit' id="publica"> Publicar </button>
 
          </div>
         </>

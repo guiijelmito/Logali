@@ -5,6 +5,16 @@ import foto_perfil from '../imagens/foto_perfil.png'
 const Comentario = ({ onClose }) => {
   const [textoComentario, setTextoComentario] = useState('');
 
+  const submit = async (data) => {
+    try {
+      const response = await axios.post('http://localhost:3000/homePage/comment', data);
+      sessionStorage.setItem('token', response.data);
+      history.push('/homepage');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleChange = (event) => {
     setTextoComentario(event.target.value);
   };
