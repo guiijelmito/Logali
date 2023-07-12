@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import lupa from '../imagens/lupa.png'
 import casa from '../imagens/casa.png'
 import sino from '../imagens/sino.png'
