@@ -19,8 +19,12 @@ import '../styles/Feed.css'
 import PostForm from './PostForm'
 import InputPost from './InputPost';
 import Header from '../Components/Header'
+import Comentario_btn from './btn_comentario';
+import Comentario from './Comentario';
 
 {/* Pendência: 
+            Precisa fazer o botão de comentário funcionar;
+            Precisa separar o código do Post em um componente;
             Fazer o header sobrepor os outros elementos ;
             Fazer o Combobox das tags quando o usário clica no botão Tags*/}
 
@@ -139,7 +143,7 @@ export default function(){
 
                 <NumLikes />
 
-                <button id='comentario' className="btn_interagir"> <img src={icone_conversa} alt="Imagem de coração"/> </button> {/* Botão para comentar */}
+                <Comentario_btn/> {/* Botão para comentar */}
                 <p className='stats_post'> 13 </p>  {/* Número de comentários */}
 
                 <img src={hashtag} alt="Imagem de tag"/>
