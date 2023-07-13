@@ -136,6 +136,20 @@ router.post("homePage/comment", autenticarToken, (req, res) => {
     res.json({ comments: post.comments });
 })
 
+router.get('homePage/:search',autenticarToken, (req,res) =>{
+    const { search } = req.params
+
+    const jsonPath = path.join(__dirname, '..', 'banco', 'postagens.json');
+    const postagens = JSON.parse(fs.readFileSync(jsonPath, { encoding: 'utf8', flag: 'r' }));
+
+    const postagensFiltradas = postagens.filter(post => post.texto.toLowerCase().includes(search.toLowerCase()));
+
+    postagensFiltradas.sort((a, b) => new Date(b.dataCriacao) - new Date(a.dataCriacao));
+
+    // devolve as postagens já filtradas
+    res.json({ posts: taggedPosts });
+})
+
 function autenticarToken (req,res,next){
     const authH = req.headers['authorization'];
     const token = authH && authH.split(' ')[1];
