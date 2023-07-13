@@ -31,6 +31,7 @@ export default function LoginUser(){
         try {
             const response = await axios.post('http://localhost:3000/auth/login', data);
             sessionStorage.setItem('token', response.data);
+            localStorage.setItem('nomeUsuario', response.data.user)
             setMsg('Usuário Autenticado');
         } catch (error) {
             setMsg(error.response.data);
