@@ -7,7 +7,6 @@ export default function PostEntry() {
   const [showInputForm, setShowInputForm] = useState(false);
 
   const handleMouseDown = () => {
-    console.log("clicou");
     setShowInputForm(true);
   };
 
@@ -20,7 +19,9 @@ export default function PostEntry() {
       <form className='share' action="#" method="get">
         {!showInputForm ? (
           <button className='button-post' onMouseDown={handleMouseDown}>
-            <img src={fullscreen} alt="Icone para aumentar a tela" />
+            <p className='p_btn_criarP'>
+              Criar Publicação
+            </p>
           </button>
         ) : (
           <InputForm onClose={handleCloseForm} />
