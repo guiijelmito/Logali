@@ -7,7 +7,6 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import LoginUser from './Components/LoginUser.jsx';
 import CreateUser from './Components/CreateUser.jsx';
 import Feed from './Components/Feed.jsx';
-import Perfil from './Components/Perfil.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,17 +25,11 @@ const router = createBrowserRouter([
   },
   {
     path: 'homePage',
-    element: <Feed />,
-    children: [
-      {
-        path: ':tag',
-        element: <Feed />
-      },
-      {
-        path: ':username',
-        element: <Perfil />
-      }
-    ]
+    element: <Feed />
+  },
+  {
+    path: 'homePage/:tag',
+    element: <Feed />
   }
 ]);
 

@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-const Postagem = require('../models/Postagem')
-
 //arquivos
 const fs = require('fs');
 const path = require('path');
@@ -10,10 +8,8 @@ const path = require('path');
 //autenticacao e cryp
 const jwt = require('jsonwebtoken');
 
-// página principal
 router.get('/homePage', autenticarToken, (req, res) => {
 
-    jwt.verify
     const jsonPath = path.join(__dirname, '..', 'banco', 'postagens.json');
     const postagens = JSON.parse(fs.readFileSync(jsonPath, { encoding: 'utf8', flag: 'r' }));
 
@@ -24,22 +20,20 @@ router.get('/homePage', autenticarToken, (req, res) => {
 
 })
 
-//fazer nova postagem
 router.post('homePage/newPost', autenticarToken, (req, res) =>{
-
+    
     const jsonPath = path.join(__dirname, '..', 'banco', 'postagens.json');
     const postagens = JSON.parse(fs.readFileSync(jsonPath, { encoding: 'utf8', flag: 'r' }));
     
     // Obtém o conteúdo e o autor da postagem a partir do corpo da requisição
-    const username = localStorage.getItem('username')
-    const { lugar, texto, tags } = req.body;
+    const { username, texto, tags } = req.body;
 
     const id = postagens.length + 1;
 
     const likes = 0;
 
     // Cria uma nova instância da classe Postagem
-    const novaPostagem = new Postagem(username,lugar, texto, tags, id, likes);
+    const novaPostagem = new Postagem(username, texto, tags, id, likes);
 
     // Adiciona a nova postagem ao array de postagens
     postagens.push(novaPostagem);
@@ -48,7 +42,6 @@ router.post('homePage/newPost', autenticarToken, (req, res) =>{
 
 })
 
-// rota para entrar na página de usuário
 // precisa testar se ta funcionando
 router.get('homePage/:username', autenticarToken, (req, res) => {
     // Obtém o nome de usuário a partir do parâmetro de rota
@@ -103,7 +96,6 @@ router.get('homePage/:tag', autenticarToken, (req, res) => {
 
 })
 
-// rota para adicionar like
 router.post("homePage/like", autenticarToken, (req, res) => {
     const id = req.body.id;
 
@@ -118,7 +110,6 @@ router.post("homePage/like", autenticarToken, (req, res) => {
     res.json({ likes: post.likes });
 })
 
-// rota para adicionar comentário
 router.post("homePage/comment", autenticarToken, (req, res) => {
     const id = req.body.id;
     const username = req.body.username;
@@ -134,20 +125,6 @@ router.post("homePage/comment", autenticarToken, (req, res) => {
     fs.writeFileSync('postagens.json', JSON.stringify(data));
 
     res.json({ comments: post.comments });
-})
-
-router.get('homePage/:search',autenticarToken, (req,res) =>{
-    const { search } = req.params
-
-    const jsonPath = path.join(__dirname, '..', 'banco', 'postagens.json');
-    const postagens = JSON.parse(fs.readFileSync(jsonPath, { encoding: 'utf8', flag: 'r' }));
-
-    const postagensFiltradas = postagens.filter(post => post.texto.toLowerCase().includes(search.toLowerCase()));
-
-    postagensFiltradas.sort((a, b) => new Date(b.dataCriacao) - new Date(a.dataCriacao));
-
-    // devolve as postagens já filtradas
-    res.json({ posts: taggedPosts });
 })
 
 function autenticarToken (req,res,next){
