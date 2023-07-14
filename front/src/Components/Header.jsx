@@ -10,7 +10,7 @@ export default function(){
 
     return(
         <div className='header'>
-         <img className='logo' src={logo} alt="Logo do Logali" />
+         
 
          <form action="search.csv" method="get" autoComplete="off" className='search'> {/* Formulário para a barra de pesquisa */}
           <img src={lupa} alt="Icone de lupa" />

@@ -35,10 +35,10 @@
 
 .comentario {
     position: absolute;
-    top: 0%;
+    top: -40%;
     left: 0%;
     width: 100%;
-    height: 100%;
+    height: 400px;
     border-radius: 30px;
     border: 1px solid #AE119E;
     background: #141313;

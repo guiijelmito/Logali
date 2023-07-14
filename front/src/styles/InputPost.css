@@ -2,6 +2,7 @@
 
 .share{    
     display: flex;
+    position: relative;
 }
 
 .button-post{
