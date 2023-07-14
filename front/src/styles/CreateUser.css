@@ -74,7 +74,7 @@ body {
     text-align: left;
   }
 .Criar{
-    margin-bottom: 10px;
+    margin: 10px;
     padding: 10px;
     font-size: 30px;
     font-family: Hubballi;
@@ -101,4 +101,10 @@ button:active {
 .server-response{
   width: 400px;
   text-align: left;
+}
+
+@media screen and (min-width: 290px) and  (max-width: 700px){
+  input {
+    width: 200px;
+  }
 }

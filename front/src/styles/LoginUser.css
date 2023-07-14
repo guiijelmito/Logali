@@ -66,9 +66,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 5px;
+    margin: 10px;
   }
   
   .logar {
@@ -80,9 +78,7 @@
     border: 1px solid #08AD9D;
     background-color:#252323 ;
     border-radius: 30px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 0;
+    margin: 10px;
     color:#08AD9D;
   }
   
@@ -120,4 +116,14 @@
 .server-response{
   width: 400px;
   text-align: left;
+}
+
+@media screen and (min-width: 290px) and  (max-width: 700px){
+  .logar {
+    width: 200px;
+  }
+
+  .logo{
+  display: none;
+}
 }

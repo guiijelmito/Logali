@@ -2,16 +2,17 @@
 
 .header{
     position: fixed;
+    z-index: 999;
     top: 0%;
     left: 5%;
     width: 85%;
     height: 100px;
-    background-color: transparent; /* Cor de fundo do cabeçalho */
     display: flex; /* Faz os elementos ficarem em linha */
     align-items: center; /* Centraliza verticalmente os elementos */
     justify-content: space-between; /* Espaçamento igual entre os elementos */
     margin: 0 20px;
-    border-bottom: 1px solid #08AD9D
+    border-bottom: 1px solid #08AD9D;
+    background-color: black; /* Cor de fundo do cabeçalho */
 }
 
 .logo {
@@ -26,16 +27,18 @@
     transform: scale(1.1);
 }
 
-form.search{
+form.search{ 
     position: relative;
-    right: 13%;
-    background-color: rgba(128, 128, 128, 0.219);
-    width: min-content;
-    height: 40%;
-    border-radius: 50px;
+    right: 20%;
     display: flex;
-    align-items: center;
-    padding: 0px 10px;
+    text-align: left;
+    width: 35%;
+    height: auto;
+    line-height: 1.2em;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50px;
+    background-color: rgba(128, 128, 128, 0.219);
     border: 1px solid #08AD9D;
     
 }
@@ -52,22 +55,6 @@ form.search{
 ::placeholder{
     color: #08AD9D;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.356);
-}
-
-.conteiner_op{
-    position: fixed;
-    left: 40%;
-}
-
-.icone_op{
-    margin: 5px;
-    transition: .4s;
-}
-
-.icone_op:hover{
-    cursor: pointer;
-    filter: drop-shadow(0 0 2em #08ad9c94);
-    transform: translate(-2px, 2px);
 }
 
 .img_perfil{
@@ -90,4 +77,16 @@ form.search{
 button{
     background-color: transparent;
     border: 0px solid black;
+}
+
+@media screen and (min-width: 290px) and  (max-width: 700px){
+    form.search{ 
+        right: 5%;
+        width: 50%;
+        
+    }
+    
+    #barra_busca{
+        width: 160px;
+    }
 }

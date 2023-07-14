@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import icone_imagem from '../imagens/imagem.png';
 import icone_video from '../imagens/video.png';
 import icone_arroba from '../imagens/arroba.png';
+
 import "../styles/InputForm.css"
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";

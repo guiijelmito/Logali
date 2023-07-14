@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../styles/Post.css'
-import foto_perfil from '../imagens/foto_perfil.png'
+
+import '../styles/Comentario.css'
 
 const Comentario = ({ onClose }) => {
   const [textoComentario, setTextoComentario] = useState('');
@@ -33,7 +33,7 @@ const Comentario = ({ onClose }) => {
   <>
     <div className='comentario-overlay'>
       <form className='comentario' onSubmit={handleSubmit}>
-        <img class="icone_perfil" src="/src/imagens/foto_perfil.png" alt="Imagem do Perfil"/>
+        <img className="icone_perfil" src="/src/imagens/foto_perfil.png" alt="Imagem do Perfil"/>
         <textarea
           className='campo_comentario'
           value={textoComentario}

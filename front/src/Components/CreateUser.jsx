@@ -1,5 +1,4 @@
 import { DevTool } from '@hookform/devtools';
-import '../styles/CreateUser.css';
 import {useForm} from 'react-hook-form';
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -7,7 +6,7 @@ import axios, * as others from 'axios';
 import { useState } from 'react';
 import User from '../models/User';
 
-
+import '../styles/CreateUser.css';
 
 const schema = yup.object({
     username: yup.string().required('Usuário obrigatório'),

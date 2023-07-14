@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 @charset "UTf-8";
 
 .button-post {
@@ -23,3 +24,31 @@
     margin-left: 10px;
     margin-right: 525px;
 }
+=======
+@charset "UTF-8";
+
+.share{    
+    display: flex;
+}
+
+.button-post{
+    display: flex;
+    text-align: left;
+    width: 90%;
+    height: auto;
+    line-height: 1.2em;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50px;
+    font-size: 100%;
+    color: #08AD9D;
+    background-color: rgba(128, 128, 128, 0.219);
+    border: 2px solid #08AD9D;
+}
+
+.button-post:hover{
+    cursor: pointer;
+}
+
+
+>>>>>>> Stashed changes

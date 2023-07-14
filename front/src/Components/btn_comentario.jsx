@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import '../styles/Feed.css';
+
 import Comentario from './Comentario';
 import icone_conversa from '../imagens/conversa.png'
+
 import '../styles/Feed.css'
 
 export default function PostEntry() {

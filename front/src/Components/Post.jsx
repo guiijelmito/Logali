@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import foto_perfil from '../imagens/foto_perfil.png';
-import icone_imagem from '../imagens/imagem.png';
-import icone_video from '../imagens/video.png';
-import icone_arroba from '../imagens/arroba.png';
-import seta from '../imagens/seta.png';
-import '../styles/Feed.css';
-import InputPost from './InputPost';
 import icone_coracao from '../imagens/coracao.png';
 import bar_chico from '../imagens/bardochico.png';
 import hashtag from '../imagens/hashtag.png';
 
+import '../styles/Post.css';
 import Comentario_btn from './btn_comentario';
+
 function NumLikes() {
     const [likes, setLikes] = useState(0);
     const [liked, setLiked] = useState(false);
@@ -37,7 +33,7 @@ function NumLikes() {
 export default function () {
     return (
         <>
-            <div className='container_post'>
+            <div className='container_post'>{/* estrutura principal dos posts */}
                 <img className="img_perfil" src={foto_perfil} alt="Imagem do Perfil" />
 
                 <p className='text_loc'> Bixo <strong>estava em</strong> Barzinho do chico </p> {/* Texto ao lado da foto de perfil do usuário que indica a localização */}
@@ -49,9 +45,9 @@ export default function () {
 
                 <div className='interagir'>
 
-                    <NumLikes />
+                    <NumLikes /> {/* Botão para dar like no post */}
 
-                    <Comentario_btn /> {/* Botão para comentar */}
+                    <Comentario_btn /> {/* Botão para comentar */}        
                     <p className='stats_post'> 13 </p>  {/* Número de comentários */}
 
                     <img src={hashtag} alt="Imagem de tag" />

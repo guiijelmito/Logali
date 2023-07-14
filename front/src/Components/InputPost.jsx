@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import InputForm from './InputForm';
-import fullscreen from '../imagens/full.png';
+import foto_perfil from '../imagens/foto_perfil.png'
 import '../styles/InputPost.css';
 
+// Botão para abrir o Pop-up
 export default function PostEntry() {
   const [showInputForm, setShowInputForm] = useState(false);
 
@@ -15,18 +16,24 @@ export default function PostEntry() {
   };
 
   return (
-    <div>
-      <form className='share' action="#" method="get">
+    <>
+      <div className='share'>
+        <img className="img_perfil" src={foto_perfil} alt="Imagem do Perfil"/>
+
         {!showInputForm ? (
+<<<<<<< Updated upstream
           <button className='button-post' onMouseDown={handleMouseDown}>
             <p className='p_btn_criarP'>
               Criar Publicação
             </p>
           </button>
+=======
+          <button className='button-post' onMouseDown={handleMouseDown}>Opine Aqui...</button>
+>>>>>>> Stashed changes
         ) : (
           <InputForm onClose={handleCloseForm} />
         )}
-      </form>
-    </div>
+      </div>
+    </>
   );
 }
