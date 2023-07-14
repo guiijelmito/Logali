@@ -52,7 +52,7 @@ export default function(){
 
          <PostForm /> {/* Componente onde o usuário fará suas postagens */}
 
-         <Post /> {/* Componente do post */}
+         <Post /> {/* Componente que mostra as postagens */}
 
         </>
     )

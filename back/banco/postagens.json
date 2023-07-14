@@ -1,0 +1,12 @@
+[
+    {
+        "username" : "username",
+        "lugar" : "lugar",
+        "texto" : "texto",
+        "tag" : "tag",
+        "id" : "id",
+        "likes" : "likes",
+        "comments" : "comments || []",
+        "dataCriacao" : "2"
+    }
+]

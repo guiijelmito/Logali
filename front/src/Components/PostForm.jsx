@@ -14,10 +14,11 @@ import { DevTool } from '@hookform/devtools';
 import {set, useForm} from 'react-hook-form';
 
 const schema = yup.object({
+    "data": {
     lugar: yup.string().min(1,'Escreva o nome do lugar para publicar').required(),
-    descricao: yup.string().min(1,'Escreva algo sobre o lugar').required(),
+    texto: yup.string().min(1,'Escreva algo sobre o lugar').required(),
+    }
 }).required();
-
 
 
 export default function(){
