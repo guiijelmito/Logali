@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import foto_rep from '../imagens/foto_rep.png'
 import foto_bar from '../imagens/foto_bar.png'
@@ -6,18 +6,28 @@ import foto_role from '../imagens/foto_role.png'
 import foto_lazer from '../imagens/foto_lazer.png'
 import foto_mercado from '../imagens/foto_mercado.png'
 
+import api from '../interceptor/interceptor'
+
 import '../styles/Feed.css'
 
 import Post from './Post'
 import PostForm from './PostForm'
 import Header from '../Components/Header'
-
-{/* Pendência: 
-            Fazer o Combobox das tags quando o usário clica no botão Tags*/}
-
-// Componente que mostra o número de curtidas e permite que o usuário curta/descurta a postagem
+import PostList from '../Components/PostList'
 
 export default function(){
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        api.get('/homePage')
+          .then(response => {
+            setPosts(response.data);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }, []);
+
     return(  
         <>
          <Header />
@@ -52,7 +62,7 @@ export default function(){
 
          <PostForm /> {/* Componente onde o usuário fará suas postagens */}
 
-         <Post /> {/* Componente que mostra as postagens */}
+         <PostList posts={posts} /> {/* Componente que mostra as postagens */}
 
         </>
     )

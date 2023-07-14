@@ -4,7 +4,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios, * as others from 'axios';
 import { useState } from 'react';
-import User from '../models/User';
 
 import '../styles/CreateUser.css';
 
