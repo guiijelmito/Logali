@@ -1,10 +1,8 @@
 class Postagem {
     // verificar como fazer para ter mais de uma tag, e adicionar imagem
-    constructor(/*username*/ lugar, texto, tag, id, likes, comments){
-        this.username = username;
-        this.lugar = lugar;
-        this.texto = texto;
-        this.tag = tag;
+    constructor(name, description, id, likes, comments){
+        this.name = name;
+        this.description = description;
         this.id = id;
         this.likes = likes;
         this.comments = comments || [];

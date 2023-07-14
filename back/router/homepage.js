@@ -11,7 +11,7 @@ const path = require('path');
 const jwt = require('jsonwebtoken');
 
 // página principal
-router.get('/homePage', autenticarToken, (req, res) => {
+router.get('/', autenticarToken, (req, res) => {
 
     jwt.verify
     const jsonPath = path.join(__dirname, '..', 'banco', 'postagens.json');
@@ -25,20 +25,22 @@ router.get('/homePage', autenticarToken, (req, res) => {
 })
 
 //fazer nova postagem
-router.post('/homePage/newPost', autenticarToken, (req, res) =>{
+router.post('/newPost', autenticarToken, (req, res) =>{
 
     const jsonPath = path.join(__dirname, '..', 'banco', 'postagens.json');
     const postagens = JSON.parse(fs.readFileSync(jsonPath, { encoding: 'utf8', flag: 'r' }));
     
     // Obtém o conteúdo e o autor da postagem a partir do corpo da requisição
-    const { lugar, texto, tags } = req.body;
+    const { name, description } = req.body;
 
     const id = postagens.length + 1;
 
     const likes = 0;
 
+    console.log(name, description, id, likes);
+
     // Cria uma nova instância da classe Postagem
-    const novaPostagem = new Postagem(lugar, texto, tags, id, likes);
+    const novaPostagem = new Postagem(name, description, id, likes);
 
     // Adiciona a nova postagem ao array de postagens
     postagens.push(novaPostagem);
@@ -49,7 +51,7 @@ router.post('/homePage/newPost', autenticarToken, (req, res) =>{
 
 // rota para entrar na página de usuário
 // precisa testar se ta funcionando
-router.get('homePage/:username', autenticarToken, (req, res) => {
+router.get('/:username', autenticarToken, (req, res) => {
     // Obtém o nome de usuário a partir do parâmetro de rota
     const { username } = req.params;
 
@@ -84,7 +86,7 @@ router.get('homePage/:username', autenticarToken, (req, res) => {
 });
 
 // rota das tags
-router.get('homePage/:tag', autenticarToken, (req, res) => {
+router.get('/:tag', autenticarToken, (req, res) => {
     // recebe a tag como parametro da rota
     const { tag } = req.params;
 
@@ -103,7 +105,7 @@ router.get('homePage/:tag', autenticarToken, (req, res) => {
 })
 
 // rota para adicionar like
-router.post("homePage/like", autenticarToken, (req, res) => {
+router.post("/like", autenticarToken, (req, res) => {
     const id = req.body.id;
 
     const jsonPath = path.join(__dirname, '..', 'banco', 'postagens.json');
@@ -118,7 +120,7 @@ router.post("homePage/like", autenticarToken, (req, res) => {
 })
 
 // rota para adicionar comentário
-router.post("homePage/comment", autenticarToken, (req, res) => {
+router.post("/comment", autenticarToken, (req, res) => {
     const id = req.body.id;
     const username = req.body.username;
     const commentText = req.body.commentText;
@@ -135,7 +137,7 @@ router.post("homePage/comment", autenticarToken, (req, res) => {
     res.json({ comments: post.comments });
 })
 
-router.get('homePage/:search',autenticarToken, (req,res) =>{
+router.get('/:search',autenticarToken, (req,res) =>{
     const { search } = req.params
 
     const jsonPath = path.join(__dirname, '..', 'banco', 'postagens.json');

@@ -9,7 +9,7 @@ const cors = require('cors');
 const authRoutes = require('./router/auth');
 
 // rotas das páginas ao usuário
-const homepageRoutes = require('./router/homepage')
+const homepageRoutes = require('./router/homepage');
 
 app.use(express.json());
 app.use(cors());
@@ -21,9 +21,6 @@ app.get('/', (req, res) => {
     res.send('Servidor funcionando corretamente');
   });
   
-
-
-
 app.listen(3000, () => {
     console.log('Servidor na porta 3000');
 });

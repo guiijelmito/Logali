@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import api from '../interceptor/interceptor';
+
 import InputForm from './InputForm';
 import icone_imagem from '../imagens/imagem.png';
 import icone_video from '../imagens/video.png';
@@ -38,9 +40,9 @@ export default function PostEntry() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post('http://localhost:3000/homePage/newPost', data);
-      sessionStorage.setItem('token', response.data);
-      history.push('/homepage');
+      const response = await api.post('http://localhost:3000/homePage/newPost', data);
+      console.log(response);
+      handleCloseForm()
     } catch (error) {
       console.log(error);
     }
