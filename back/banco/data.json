@@ -10,5 +10,11 @@
     "username": "Tavão o Magnífico",
     "email": "teste2@teste.com",
     "password": "$2b$10$SHQ5yIu6voR/BAoicltsGeSQw5xYmdquBpAJ/h19s597ni3flMOZK"
+  },
+  {
+    "id": 3,
+    "username": "teste3",
+    "email": "teste3@teste.com",
+    "password": "$2b$10$SyCHaMvcOOJ/3EiSe5EEZOUhiq5WjyHJaC9CTI3mHcLPVqyYTzg3W"
   }
 ]
