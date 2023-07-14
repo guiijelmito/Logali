@@ -1,9 +1,22 @@
 import React, { useState } from 'react';
 import InputForm from './InputForm';
+import icone_imagem from '../imagens/imagem.png';
+import icone_video from '../imagens/video.png';
+import icone_arroba from '../imagens/arroba.png';
+import seta from '../imagens/seta.png';
+
 import foto_perfil from '../imagens/foto_perfil.png'
 import '../styles/InputPost.css';
+import { useForm } from 'react-hook-form';
+import axios from 'axios';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
-// Botão para abrir o Pop-up
+const schema = yup.object({
+  name: yup.string().min(1, 'Escreva o nome do lugar para publicar').required(),
+  description: yup.string().min(1, 'Escreva algo sobre o lugar').required(),
+}).required();
+
 export default function PostEntry() {
   const [showInputForm, setShowInputForm] = useState(false);
 
@@ -13,6 +26,24 @@ export default function PostEntry() {
 
   const handleCloseForm = () => {
     setShowInputForm(false);
+  };
+
+  const handleClose = () => {
+    setShowInputForm(false);
+  };
+
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(schema)
+  });
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post('http://localhost:3000/homePage/newPost', data);
+      sessionStorage.setItem('token', response.data);
+      history.push('/homepage');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -46,7 +77,6 @@ export default function PostEntry() {
 
                 <button className='send-button'>Publicar</button>
               </form>
-
             </div>
           </div>
         )}

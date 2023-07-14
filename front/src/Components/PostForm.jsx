@@ -43,8 +43,6 @@ export default function(){
         <>
          <div className="container_share"> {/* Caixa onde o usuário faz suas postagens */}
             <InputPost/> {/* Botão que leva o usuário para o pop-up de criação de post */}
-
-          
          </div>
         </>
     )

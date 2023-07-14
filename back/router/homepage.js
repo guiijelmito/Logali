@@ -25,13 +25,12 @@ router.get('/homePage', autenticarToken, (req, res) => {
 })
 
 //fazer nova postagem
-router.post('homePage/newPost', autenticarToken, (req, res) =>{
+router.post('/homePage/newPost', autenticarToken, (req, res) =>{
 
     const jsonPath = path.join(__dirname, '..', 'banco', 'postagens.json');
     const postagens = JSON.parse(fs.readFileSync(jsonPath, { encoding: 'utf8', flag: 'r' }));
     
     // Obtém o conteúdo e o autor da postagem a partir do corpo da requisição
-    const username = localStorage.getItem('username')
     const { lugar, texto, tags } = req.body;
 
     const id = postagens.length + 1;
@@ -39,7 +38,7 @@ router.post('homePage/newPost', autenticarToken, (req, res) =>{
     const likes = 0;
 
     // Cria uma nova instância da classe Postagem
-    const novaPostagem = new Postagem(username,lugar, texto, tags, id, likes);
+    const novaPostagem = new Postagem(lugar, texto, tags, id, likes);
 
     // Adiciona a nova postagem ao array de postagens
     postagens.push(novaPostagem);

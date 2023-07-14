@@ -31,9 +31,7 @@ router.post('/login', async (req,res) => {
             const passwordValidado = await bcrypt.compare(password, user.password);
             if(passwordValidado===true){
                 // devolve um token para que o usuário possa acessar a homepage
-                const usuario = usuariosCadastrados.find(usuario => usuario.email === email);
-                const username = usuario.username
-                localStorage.setItem('username', username);
+                
                 const tokenAcesso = jwt.sign(user,process.env.TOKEN);
                 return res.status(200).json(tokenAcesso);
             }
