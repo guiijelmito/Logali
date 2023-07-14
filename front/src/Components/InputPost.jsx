@@ -21,15 +21,7 @@ export default function PostEntry() {
         <img className="img_perfil" src={foto_perfil} alt="Imagem do Perfil"/>
 
         {!showInputForm ? (
-<<<<<<< Updated upstream
-          <button className='button-post' onMouseDown={handleMouseDown}>
-            <p className='p_btn_criarP'>
-              Criar Publicação
-            </p>
-          </button>
-=======
           <button className='button-post' onMouseDown={handleMouseDown}>Opine Aqui...</button>
->>>>>>> Stashed changes
         ) : (
           <InputForm onClose={handleCloseForm} />
         )}

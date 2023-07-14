@@ -44,14 +44,8 @@ export default function(){
          <div className="container_share"> {/* Caixa onde o usuário faz suas postagens */}
             <InputPost/> {/* Botão que leva o usuário para o pop-up de criação de post */}
 
-<<<<<<< Updated upstream
-            <form className='share' action="#" method="get"> 
-                <InputPost/> {/* Botão que leva o usuário para o pop-up de criação de post */}
-            </form>
-                
-=======
->>>>>>> Stashed changes
             <hr />
+
 
             <menu>
                 <ul className='lista_icones_share'>
