@@ -1,30 +1,3 @@
-<<<<<<< Updated upstream
-@charset "UTf-8";
-
-.button-post {
-    border-radius: 30px;
-    border: 1px solid #AE119E;
-    background-color: #100b10;
-    width: max-content;
-    margin-top: 10px;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: .4s ease;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    color: #AE119E;
-}
-
-.p_btn_criarP {
-    color: #08AD9D;
-    font-size: 15px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 525px;
-}
-=======
 @charset "UTF-8";
 
 .share{    
@@ -51,4 +24,3 @@
 }
 
 
->>>>>>> Stashed changes
