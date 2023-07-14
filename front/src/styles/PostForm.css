@@ -3,15 +3,21 @@
 /* Estilização do componente PostForm */
 .container_share {
   position: absolute;
-  left: 35%;
-  top: 20%;
-  width: 50%;
+  left: 65%;
+  top: 10%;
+  width: 25%;
+  height: 30px;
   border-radius: 30px;
-  border: 1px solid #AE119E;
+  border: 0px solid #AE119E;
   padding: 10px;
-  background-color: #141313;
+  background-color: transparent;
 }
   
+.img_perfil{
+  display: none;
+}
+
+
 hr {
   border: 1px solid #252323;
 }

@@ -15,21 +15,20 @@
     background-color: black; /* Cor de fundo do cabeçalho */
 }
 
-.logo {
-    width: 60px;
-    height: 55px;
+.logo{
     transition: .4s;
+    transform: scale(0.8);
 }
 
 .logo:hover {
-    filter: drop-shadow(0 0 2em #08ad9c9c);
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1);
+    filter: drop-shadow(0 0 2em #08ad9c69);
 }
 
 form.search{ 
     position: relative;
-    right: 20%;
+    right: 16%;
     display: flex;
     text-align: left;
     width: 35%;

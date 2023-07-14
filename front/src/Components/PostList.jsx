@@ -1,9 +1,11 @@
 import React from 'react';
 import Post from './Post';
 
+import '../styles/PostList.css'
+
 export default function PostList({ posts }) {
   return (
-    <ul>
+    <ul className='lista_post'>
       {posts.map(post => (
         <li key={post.id}>
           <Post post={{

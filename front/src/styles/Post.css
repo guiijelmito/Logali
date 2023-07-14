@@ -1,20 +1,20 @@
  /* Estilização do componente Post */
 .container_post{
   position: relative;
-  left: 35%;
-  top: 85%;
+  left: 10%;
+  top: 35%;
   
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: start;
   justify-content: center;
   max-width: 100%;
   margin: 25px auto;
   
-  width: 350px;
-  height: auto;
+  width: 700px;
+  height: 200px;
 
-  padding: 20px;
+  padding: 30px;
   border-radius: 30px;
   border: 1px solid #AE119E;
   background: #141313;
@@ -49,6 +49,18 @@
 li{
   list-style: none;
 }
+
+.lista_post{
+  position: relative;
+  display: flex;
+  width: 600px;
+  max-height: 50vh;
+  left: 0%;
+
+  flex-direction: column;
+  align-items: flex-start;
+}
+
   
 img#post_foto{
   display: block;
@@ -57,10 +69,20 @@ img#post_foto{
   height: auto;
 }
   
+.texto_usuario{
+  position: absolute;
+  top: 18%;
+  text-align: left;
+
+}
+
 .interagir{
+  position: absolute;
+  top: 85%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-items: center;
+
 }
   
 .stats_post{

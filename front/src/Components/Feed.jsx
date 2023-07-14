@@ -11,7 +11,6 @@ import api from '../interceptor/interceptor'
 import '../styles/Feed.css'
 
 import Post from './Post'
-import PostForm from './PostForm'
 import Header from '../Components/Header'
 import PostList from '../Components/PostList'
 
@@ -60,9 +59,9 @@ export default function(){
             </menu> 
          </div>
 
-         <PostForm /> {/* Componente onde o usuário fará suas postagens */}
 
-         <PostList posts={posts} /> {/* Componente que mostra as postagens */}
+        
+         <PostList posts={posts} />{/* Componente que mostra as postagens */}
 
         </>
     )

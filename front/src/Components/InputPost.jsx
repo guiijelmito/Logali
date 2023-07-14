@@ -42,6 +42,7 @@ export default function PostEntry() {
     try {
       const response = await api.post('http://localhost:3000/homePage/newPost', data);
       console.log(response);
+      window.location.reload()
       handleCloseForm()
     } catch (error) {
       console.log(error);
@@ -54,7 +55,7 @@ export default function PostEntry() {
         <img className="img_perfil" src={foto_perfil} alt="Imagem do Perfil" />
 
         {!showInputForm ? (
-          <button className='button-post' onMouseDown={handleMouseDown}>Opine Aqui...</button>
+          <button className='button-post' onMouseDown={handleMouseDown}>Publicar</button>
         ) : (
           <div className="input-form-overlay">
             <div className="input-form-container">
