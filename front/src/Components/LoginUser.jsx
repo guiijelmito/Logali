@@ -1,5 +1,4 @@
 import { DevTool } from '@hookform/devtools';
-import '../styles/LoginUser.css';
 import {set, useForm} from 'react-hook-form';
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -7,6 +6,7 @@ import axios, * as others from 'axios';
 import { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 
+import '../styles/LoginUser.css';
 
 const schema = yup.object({
     email: yup.string().email('Email inválido').required('Email obrigatório'),

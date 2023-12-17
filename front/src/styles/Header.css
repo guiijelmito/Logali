@@ -15,16 +15,6 @@
     background-color: black; /* Cor de fundo do cabeçalho */
 }
 
-.logo{
-    transition: .4s;
-    transform: scale(0.8);
-}
-
-.logo:hover {
-    cursor: pointer;
-    transform: scale(1);
-    filter: drop-shadow(0 0 2em #08ad9c69);
-}
 
 form.search{ 
     position: relative;

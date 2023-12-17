@@ -43,34 +43,48 @@ export default function(){
     //para ver os erros no console a cada render
     //console.log('erro', errors);
 
+
     return (
         <>
-        <div className='container'>
-            <p className='logo'>Logáli</p>
-            <form className='Register' onSubmit={handleSubmit(submit)} noValidate>
-                <label className="Espaco" htmlFor="username" placeholder="usuário">Usuário</label>
-                <input type="text" id="username" {...register('username')} />
-                <p className='erro'>{errors.username?.message}</p>
+            <div className='main_container'>
+                <h1 className='logo'>Logáli</h1>
+        
+                <div className='content'>
 
-                <label htmlFor="email" placeholder="email">Email</label>
-                <input type="text" id="email" {...register('email')} />
-                <p className='erro'>{errors.email?.message}</p>
+                    <form onSubmit={handleSubmit(submit)} noValidate>
 
-                <label htmlFor="password">Senha</label>
-                <input type="password" id="password" {...register('password')} />
-                <p className='erro'>{errors.password?.message}</p>
+                        <label htmlFor="username"><img src="imagens/conta-roxo-32.png" alt="icone do perfil" /></label>
+                        <input type="text" id="username" placeholder="Nome Completo"  {...register('username')} required/><br />
+                        <p className='erro'>{errors.username?.message}</p>
+                        <hr id="linha01" />
 
-                <label htmlFor="password">Confirmar Senha</label>
-                <input type="password" id="passwordConf" {...register('passwordConf')} />
-                <p className='erro'>{errors.passwordConf?.message}</p>
+                        <label htmlFor="email"><img src="imagens/mensagem-roxo-30.png" alt="icone de envelope" /></label>
+                        <input type="email" id="email" required maxlength="35" placeholder=" Email"  {...register('email')} /> <br />
+                        <p className='erro'>{errors.email?.message}</p>
+                        <hr id="linha02" />
 
-                <button className='Criar'>Criar Usuário</button>
-            </form>
-            <p className='logo'>Logáli</p>
-        </div>
+                        <label htmlFor="password"><img src="imagens/desbloquear-roxo-32.png" alt="icone de senha" /></label>
+                        <input type="password" id="password" required minlength="8" maxlength="20" placeholder=" Senha (8-20)" {...register('password')} /> <br />
+                        <p className='erro'>{errors.password?.message}</p>
+                        <hr id="linha03" />
+                
+                        <label htmlFor="passwordConf"><img src="imagens/cadeado-roxo-32.png" alt="icone de senha" /></label>
+                        <input  type="password" id="passwordConf" required minlength="8" maxlength="20" placeholder="Confirmar Senha"  {...register('passwordConf')} /> <br />
+                        <p className='erro'>{errors.passwordConf?.message}</p>
+                        <hr id="linha04" />
+
+                        <button type='submit' className='Criar'>Criar Usuário</button> 
+                    </form>
+                    <button id="voltar">Login</button>
+
+                </div>
+            </div>
             <DevTool control={control}/>
             <p className='server-response'>{msg}</p>
-        </>
-    )
 
+            {/* Linha que gera as divs que contem as bolas */}
+            {Array(5).fill().map((_, i) => <div key={i} className='bolas' id={`bola${i}`}></div>)}
+
+        </>
+    );
 }
