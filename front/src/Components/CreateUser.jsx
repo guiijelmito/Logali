@@ -65,12 +65,12 @@ export default function(){
                         <hr id="linha02" />
 
                         <label htmlFor="password"><img src="imagens/desbloquear-roxo-32.png" alt="icone de senha" /></label>
-                        <input type="password" id="password" required minlength="8" maxlength="20" placeholder=" Senha (8-20)" {...register('password')} /> <br />
+                        <input type="password" id="password" required minlength="2" maxlength="20" placeholder=" Senha (2-20)" {...register('password')} /> <br />
                         <p className='erro'>{errors.password?.message}</p>
                         <hr id="linha03" />
                 
                         <label htmlFor="passwordConf"><img src="imagens/cadeado-roxo-32.png" alt="icone de senha" /></label>
-                        <input  type="password" id="passwordConf" required minlength="8" maxlength="20" placeholder="Confirmar Senha"  {...register('passwordConf')} /> <br />
+                        <input  type="password" id="passwordConf" required minlength="2" maxlength="20" placeholder="Confirmar Senha"  {...register('passwordConf')} /> <br />
                         <p className='erro'>{errors.passwordConf?.message}</p>
                         <hr id="linha04" />
 

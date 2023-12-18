@@ -54,7 +54,7 @@ export default function LoginUser(){
                     <hr id="line01" />
                     
                     <label className='senhalogar' htmlFor="password"><img src="imagens/chave-roxo-32.png" /></label>
-                    <input type="password" name="senha" id="password" required minlength="8" maxlength="20" placeholder=" Senha (8-20)" {...register('password')} />
+                    <input type="password" name="senha" id="password" required minlength="2" maxlength="20" placeholder=" Senha (2-20)" {...register('password')} />
                     <p className='erro'>{errors.password?.message}</p>
                     <hr id="line02" />
 
