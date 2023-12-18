@@ -4,6 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios, * as others from 'axios';
 import { useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
+import Draggable from 'react-draggable';
 
 import '../styles/CreateUser.css';
 
@@ -43,7 +45,6 @@ export default function(){
     //para ver os erros no console a cada render
     //console.log('erro', errors);
 
-
     return (
         <>
             <div className='main_container'>
@@ -75,7 +76,7 @@ export default function(){
 
                         <button type='submit' className='Criar'>Criar Usuário</button> 
                     </form>
-                    <button id="voltar">Login</button>
+                    <Link to="/"> <button id="voltar">Login</button> </Link>
 
                 </div>
             </div>
@@ -83,8 +84,11 @@ export default function(){
             <p className='server-response'>{msg}</p>
 
             {/* Linha que gera as divs que contem as bolas */}
-            {Array(5).fill().map((_, i) => <div key={i} className='bolas' id={`bola${i}`}></div>)}
-
+                {Array(5).fill().map((_, i) => (
+                    <Draggable key={i}>
+                        <div className='bolas' id={`bola${i}`}></div>
+                    </Draggable>
+                ))}
         </>
     );
 }

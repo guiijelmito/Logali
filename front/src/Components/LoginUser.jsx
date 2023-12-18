@@ -44,31 +44,35 @@ export default function LoginUser(){
 
     return (
         <>
-        <div className="body">
-        <div className='container1'>
-            <p className="logo">Logáli</p>
-            <form  className='Login' onSubmit={handleSubmit(submit)} noValidate>
+            <div className='container'>
+                <h1 className="logo">Logáli</h1>
+                <form  className='Login' onSubmit={handleSubmit(submit)} noValidate>
 
-                <label className='nomelogar' htmlFor="email" placeholder="email">Email</label>
-                <input className='logar' type="text" id="email" {...register('email')} />
-                <p className='erro'>{errors.email?.message}</p>
-                
-                <label className='senhalogar' htmlFor="password">Senha</label>
-                <input className='logar' type="password" id="password" {...register('password')} />
-                <p className='erro'>{errors.password?.message}</p>
+                    <label htmlFor="email"><img src="imagens/conta-roxo-32.png" /></label>
+                    <input type="email" name="email" id="email" required maxlength="35" placeholder=" Email" {...register('email')} />
+                    <p className='erro'>{errors.email?.message}</p>
+                    <hr id="line01" />
+                    
+                    <label className='senhalogar' htmlFor="password"><img src="imagens/chave-roxo-32.png" /></label>
+                    <input type="password" name="senha" id="password" required minlength="8" maxlength="20" placeholder=" Senha (8-20)" {...register('password')} />
+                    <p className='erro'>{errors.password?.message}</p>
+                    <hr id="line02" />
 
-                <button className='Entrar'>Entrar</button>
-            </form>
-            <p className="logo">Logáli</p>
+                    <button type='submit' className='Entrar'>Entrar</button>
+                </form>
+
+                <Link to="/CreateUser"> <button id="cadastrar">Cadastrar</button> </Link>
+
             </div>
+
+            {/* Linha que gera as divs que contem as bolas */}
+            {Array(5).fill().map((_, i) => <div key={i} className='bolas' id={`bola${i}`}></div>)}
+
             <DevTool control={control}/>
             <p className="server-response">{msg}</p>
-            <div className="realizar-cadastro">
-                Não possui conta? 
-                <Link to="/CreateUser">Cadastro</Link>
-            </div>    
-        </div> 
-        </>
+
+             
+        </> 
     )
 
 }

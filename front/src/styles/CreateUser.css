@@ -93,8 +93,8 @@ body{
 
 .main_container > .content button:hover{
     cursor: pointer;
-    background-color: #08AD9D;
-    box-shadow: 0px 0px 20px 10px #08AD9D;
+    background-color: var(--cor-secundaria);
+    box-shadow: 0px 0px 20px 10px var(--cor-secundaria);
 }
 
 hr{
@@ -134,6 +134,7 @@ hr{
     background-color: var(--cor-primaria);
     box-shadow: 0px 0px 20px 10px var(--cor-primaria);
     animation: go-back 1s ease-in-out infinite alternate;
+    transition-duration: .7s
 }
 
 #bola0{
@@ -189,6 +190,7 @@ hr{
         transform: translateY(0);
     }
 }
+  
 
 /* Configuração de estilo para aparelhos de tablet */
 @media screen and (min-width: 700px) and  (max-width: 1100px){
