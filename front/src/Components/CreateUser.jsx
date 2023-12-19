@@ -60,17 +60,17 @@ export default function(){
                         <hr id="linha01" />
 
                         <label htmlFor="email"><img src="imagens/mensagem-roxo-30.png" alt="icone de envelope" /></label>
-                        <input type="email" id="email" required maxlength="35" placeholder=" Email"  {...register('email')} /> <br />
+                        <input type="email" id="email" required maxLength="35" placeholder=" Email"  {...register('email')} /> <br />
                         <p className='erro'>{errors.email?.message}</p>
                         <hr id="linha02" />
 
                         <label htmlFor="password"><img src="imagens/desbloquear-roxo-32.png" alt="icone de senha" /></label>
-                        <input type="password" id="password" required minlength="2" maxlength="20" placeholder=" Senha (2-20)" {...register('password')} /> <br />
+                        <input type="password" id="password" required minLength="2" maxLength="20" placeholder=" Senha (2-20)" {...register('password')} /> <br />
                         <p className='erro'>{errors.password?.message}</p>
                         <hr id="linha03" />
                 
                         <label htmlFor="passwordConf"><img src="imagens/cadeado-roxo-32.png" alt="icone de senha" /></label>
-                        <input  type="password" id="passwordConf" required minlength="2" maxlength="20" placeholder="Confirmar Senha"  {...register('passwordConf')} /> <br />
+                        <input  type="password" id="passwordConf" required minLength="2" maxLength="20" placeholder="Confirmar Senha"  {...register('passwordConf')} /> <br />
                         <p className='erro'>{errors.passwordConf?.message}</p>
                         <hr id="linha04" />
 
@@ -84,11 +84,8 @@ export default function(){
             <p className='server-response'>{msg}</p>
 
             {/* Linha que gera as divs que contem as bolas */}
-                {Array(5).fill().map((_, i) => (
-                    <Draggable key={i}>
-                        <div className='bolas' id={`bola${i}`}></div>
-                    </Draggable>
-                ))}
+            {Array(5).fill().map((_, i) => <div key={i} className='bolas' id={`bola${i}`}></div>)}
+
         </>
     );
 }

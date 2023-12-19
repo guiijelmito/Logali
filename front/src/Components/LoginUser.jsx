@@ -49,12 +49,12 @@ export default function LoginUser(){
                 <form  className='Login' onSubmit={handleSubmit(submit)} noValidate>
 
                     <label htmlFor="email"><img src="imagens/conta-roxo-32.png" /></label>
-                    <input type="email" name="email" id="email" required maxlength="35" placeholder=" Email" {...register('email')} />
+                    <input type="email" name="email" id="email" required maxLength="35" placeholder=" Email" {...register('email')} />
                     <p className='erro'>{errors.email?.message}</p>
                     <hr id="line01" />
                     
                     <label className='senhalogar' htmlFor="password"><img src="imagens/chave-roxo-32.png" /></label>
-                    <input type="password" name="senha" id="password" required minlength="2" maxlength="20" placeholder=" Senha (2-20)" {...register('password')} />
+                    <input type="password" name="senha" id="password" required minLength="2" maxLength="20" placeholder=" Senha (2-20)" {...register('password')} />
                     <p className='erro'>{errors.password?.message}</p>
                     <hr id="line02" />
 
