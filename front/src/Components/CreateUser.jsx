@@ -5,7 +5,6 @@ import * as yup from "yup";
 import axios, * as others from 'axios';
 import { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import Draggable from 'react-draggable';
 
 import '../styles/CreateUser.css';
 
@@ -30,17 +29,21 @@ export default function(){
     const {errors} = formState;
 
     //const {name, ref, onChange, onBlur} =  register('username');
-
+    
     const submit = async (data) => {
-        
-        try {
-            const response = await axios.post('http://localhost:3000/auth/create', data);
-            setMsg('Usuário Criado, volte para página de Login');
-        } catch (error) {
+    try {
+        const response = await axios.post('http://localhost:3000/auth/create', data);
+        setMsg('Usuário Criado, volte para página de Login');
+    } catch (error) {
+        // Verifique se error.response está presente antes de acessá-lo
+        if (error.response) {
             setMsg(error.response.data);
-        }   
-        
+        } else {
+            setMsg('Erro ao conectar ao servidor');
+        }
     }
+}
+
   
     //para ver os erros no console a cada render
     //console.log('erro', errors);

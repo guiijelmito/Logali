@@ -18,15 +18,15 @@
     "password": "$2b$10$SyCHaMvcOOJ/3EiSe5EEZOUhiq5WjyHJaC9CTI3mHcLPVqyYTzg3W"
   },
   {
-    "id": 4,
-    "username": "Paulo Brificado",
-    "email": "caio47544@gmail.com",
-    "password": "$2b$10$27xHNXrzrJkq7HMBOekP4eF8UCnCDE2jR59nIRrwpu3OJ8YKSYUnO"
-  },
-  {
     "id": 5,
     "username": "damasceno",
     "email": "teste4@teste.com",
     "password": "$2b$10$9EQ4Stt0tGskQoObo9p60OLKidOg7qa5WJrpi0OgO1nUpaPUJlcWy"
+  },
+  {
+    "id": 6,
+    "username": "teste",
+    "email": "teste@exemplo.us",
+    "password": "$2b$10$0QY0BEVAexa1mp7Ybobtv.DVXUg39THMoEz0Oz5kD/tf3bdjM.RTe"
   }
 ]

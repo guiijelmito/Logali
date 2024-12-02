@@ -6,6 +6,7 @@ import axios, * as others from 'axios';
 import { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 
+import Bola from './Bola';
 import '../styles/LoginUser.css';
 
 const schema = yup.object({
@@ -66,7 +67,7 @@ export default function LoginUser(){
             </div>
 
             {/* Linha que gera as divs que contem as bolas */}
-            {Array(5).fill().map((_, i) => <div key={i} className='bolas' id={`bola${i}`}></div>)}
+            <Bola />
 
             <DevTool control={control}/>
             <p className="server-response">{msg}</p>

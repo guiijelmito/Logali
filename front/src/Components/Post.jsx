@@ -36,22 +36,22 @@ export default function Post({ post }) {
 
   return (
     <>
-      <div className='container_post'>{/* estrutura principal dos posts */}
+      <div className="list-posts">{/* wrap dos posts */}
 
-        <p className='text_loc'> <strong>Estava em</strong> {post.lugar} </p> 
-        <p className="horas"> {post.dataCriacao} </p>
+        <div className='container_post'>{/* estrutura principal dos posts individuais */}
 
-        <p className="texto_usuario"> {post.texto} </p>
+          <p className='text_loc'> <strong>Estava em</strong> {post.lugar} </p>
+          <p className="horas"> {post.dataCriacao} </p>
+          <p className="texto_usuario"> {post.texto} </p>
 
-        <div className='interagir'>
-
-          <NumLikes likes={likes} onLike={handleLike} /> {/* Botão para dar like no post */}
-
-          <Comentario_btn /> {/* Botão para comentar */}        
-          <p className='stats_post'> {post.comentarios} </p>  {/* Número de comentários */}
-
-          <img src={hashtag} alt="Imagem de tag" />
-          <p className='stats_post'> {post.hashtag} </p>
+          <div className='interagir'>
+            <NumLikes likes={likes} onLike={handleLike} /> {/* Botão para dar like no post */}
+            <Comentario_btn /> {/* Botão para comentar */}
+            <p className='stats_post'> {post.comentarios} </p>  {/* Número de comentários */}
+            <img src={hashtag} alt="Imagem de tag" />
+            <p className='stats_post'> {post.hashtag} </p>
+          </div>
+          
         </div>
       </div>
 

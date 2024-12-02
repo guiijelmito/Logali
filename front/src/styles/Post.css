@@ -1,13 +1,5 @@
  /* Estilização do componente Post */
 .container_post{
-  position: relative;
-  left: 10%;
-  top: 35%;
-  
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
   max-width: 100%;
   margin: 25px auto;
   
@@ -18,6 +10,12 @@
   border-radius: 30px;
   border: 1px solid #AE119E;
   background: #141313;
+}
+
+.list-posts{
+  position: relative;
+  left: 65%;
+  top: 150px;
 }
   
 .text_loc{

@@ -107,15 +107,6 @@ hr{
     transition: .4s;
 }
 
-.linha_destaque{
-    width: 90%;
-    position: absolute;
-    left: 5%;
-    border: none;
-    background-color: black;
-    height: 1px;
-}
-
 .erro {
   color: #AE119E;
   font: 26px;
